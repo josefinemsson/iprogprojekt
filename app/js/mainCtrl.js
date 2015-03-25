@@ -1,5 +1,6 @@
 tasteMeApp.controller('mainCtrl', function ($scope) {
 
+
 	$scope.getLikeList = function (){
 		return model.getLikeList();
 	}

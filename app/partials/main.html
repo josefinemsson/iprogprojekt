@@ -1,6 +1,13 @@
 <div class="row">
-<div class="col-md-3">
-<ul>
-	<li ng-repeat="like in getLikeList">{{like}}</li>
-</div>
+	<div class="col-md-3">
+		<ul>
+			<li ng-repeat="like in getLikeList">{{like}}</li>
+		</ul>
+		<div class="row" ng-controller="mainCtrl">
+			<form >
+				<input type="text" ng-model="currentLike" placeholder="What do you like?"/>
+				<button type= "button" ng-click="addToLikeList(currentLike)" value="ADD"/>
+			</form>
+		</div>
+	</div>
 </div>

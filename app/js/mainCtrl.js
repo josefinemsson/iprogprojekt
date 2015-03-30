@@ -8,7 +8,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 	$scope.addToLikeList = function (item){
 		console.log('Lägger till i likelist')
-		Model.getLikeList(item);
+		Model.addToLikeList(item);
 	}
 
 	$scope.removeFromLikeList = function (name){

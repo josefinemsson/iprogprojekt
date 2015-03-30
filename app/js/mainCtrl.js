@@ -1,16 +1,16 @@
-tasteMeApp.controller('mainCtrl', function ($scope) {
+tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 
 	$scope.getLikeList = function (){
-		return model.getLikeList();
+		return Model.getLikeList();
 	}
 
 	$scope.addToLikeList = function (item){
-		model.getLikeList(item);
+		Model.getLikeList(item);
 	}
 
 	$scope.removeFromLikeList = function (name){
-		return model.removeFromLikeList(name);
+		return Model.removeFromLikeList(name);
 	}
 
 

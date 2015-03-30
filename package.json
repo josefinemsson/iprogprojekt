@@ -2,7 +2,6 @@
   "version": "0.0.0",
   "private": true,
   "name": "tasteMe",
-  "description": "A starter project for Interaction Programming course Lab5",
   "license": "MIT",
   "devDependencies": {
     "http-server": "^0.6.1",

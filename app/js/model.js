@@ -1,4 +1,4 @@
-tasteMeApp.factory('model',function ($resource) {
+tasteMeApp.factory('Model',function ($resource) {
 
 	var likeList= [];
 
@@ -22,6 +22,8 @@ this.getLikeList = function(){
  		}
  	}
  }
+
+ 
 
  return this;
 

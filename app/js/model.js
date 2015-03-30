@@ -3,8 +3,8 @@ tasteMeApp.factory('Model',function ($resource) {
 	var likeList= [];
 
 this.getLikeList = function(){
-	return likeList;
 	console.log(likeList)
+	return likeList;
 }
 
  this.addToLikeList = function(likedItem)

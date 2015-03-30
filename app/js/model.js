@@ -4,6 +4,7 @@ tasteMeApp.factory('Model',function ($resource) {
 
 this.getLikeList = function(){
 	return likeList;
+	console.log(likeList)
 }
 
  this.addToLikeList = function(likedItem)

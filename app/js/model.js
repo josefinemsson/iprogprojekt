@@ -9,8 +9,8 @@ this.getLikeList = function(){
 }
 
  this.addToLikeList = function(likedItem)
- {
- 	return likeList.push(likedItem)
+ {	console.log(likeList)
+ 	likeList.push(likedItem)
  }
 
 

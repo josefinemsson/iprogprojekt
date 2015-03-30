@@ -1,6 +1,7 @@
 tasteMeApp.factory('Model',function ($resource) {
 
 	var likeList= [];
+	console.log('Inne i model')
 
 this.getLikeList = function(){
 	console.log(likeList)

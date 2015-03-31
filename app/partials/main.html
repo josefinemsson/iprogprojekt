@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-3" id="field">
 			<ul>
-				<li ng-repeat="like in getLikeList()"><span class="glyphicon glyphicon-remove" id = 'removeMe' aria-hidden="true"></span>{{like}}</li>
+				<li ng-repeat="like in getLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like); createNewRecList()" id = 'removeMe' aria-hidden="true"></span>{{like}}</li>
 			</ul>
 			<div class="row">
 				<form>
@@ -16,7 +16,15 @@
 		<div class="col-md-3" id="field">
 			{{status}}
 			<ul>
-				<li ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" id = 'heartMe' aria-hidden="true"></span>{{thing.Name}}</li>
+				<li ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing.Name); getOurHeartList()" id = 'heartMe' aria-hidden="true"></span>{{thing.Name}}</li>
+			</ul>
+		</div>
+
+		<div class="col-md-3" id="field">
+			<ul>
+				<li ng-repeat="heart in getHeartList"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true"></span>{{heart}}
+
+				</li>
 			</ul>
 		</div>
 	</div>

@@ -2,6 +2,7 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 
 	var likeList= [];
 	var recList = [];
+	var heartList = [];
 
 
 	this.getStringLikeList = function(){
@@ -38,6 +39,24 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 
 	this.getRecList = function (){
 		return recList
+	}
+
+	this.getHeartList = function(){
+		console.log('Get heartList')
+		return heartList;
+	}
+
+	this.addToHeartList = function(name){
+		heartList.push(name);
+	}
+
+	this.removeFromHeartList = function (name){
+		for (i=0;i<heartList.length;i++){
+	 		if (heartList[i]===name){
+	 			heartList.splice(i,1);
+	 		}
+	 	}
+
 	}
 	
 	return this;

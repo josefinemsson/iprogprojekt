@@ -15,6 +15,22 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		return Model.removeFromLikeList(name);
 	}
 
+	$scope.getOurHeartList = function (){
+
+		$scope.getHeartList = Model.getHeartList();
+	}
+
+	
+	
+
+	$scope.addToHeartList = function(item){
+		console.log('Add to heartList')
+		return Model.addToHeartList(item);
+	}
+
+	$scope.removeFromHeartList = function(item){
+		return Model.removeFromHeartList(item);
+	}
 
 	$scope.createNewRecList = function() {
 

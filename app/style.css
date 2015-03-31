@@ -25,12 +25,12 @@ font-size: 20px;
 }
 
 
-#heartMe, #removeMe {
+#heartMe, #removeMe, #unHeartMe:hover {
 	color: gray;
 	padding-right: 5px;
 }
 
-#heartMe:hover {
+#heartMe:hover, #unHeartMe {
 	color: red;
 
 	}
@@ -38,3 +38,4 @@ font-size: 20px;
 #removeMe:hover {
 	color: black;
 }
+

@@ -1,17 +1,23 @@
 <div class="container">
 
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-3" id="field">
 			<ul>
-				<li ng-repeat="like in getLikeList()">{{like}}</li>
+				<li ng-repeat="like in getLikeList()"><span class="glyphicon glyphicon-remove" id = 'removeMe' aria-hidden="true"></span>{{like}}</li>
 			</ul>
 			<div class="row">
-				<form >
-					<input type="text" ng-model="currentLike" placeholder="What do you like?"/>
-					<button type= "button" ng-click="addToLikeList(currentLike)" value="ADD"/>
+				<form>
+					<input type="text" ng-model="currentLike" placeholder="What do you like?">
+					<button type= "button" ng-click="addToLikeList(currentLike); createNewRecList()" value="ADD">ADD</botton>
 				</form>
-
 			</div>
+		</div>
+
+		<div class="col-md-3" id="field">
+			{{status}}
+			<ul>
+				<li ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" id = 'heartMe' aria-hidden="true"></span>{{thing.Name}}</li>
+			</ul>
 		</div>
 	</div>
 

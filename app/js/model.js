@@ -15,7 +15,7 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 		return string;
 	}
 
-	this.likeSearch = $resource('http://www.tastekid.com/api/similar?k=76627-TasteMe-RG4042W1',{limit:10,callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
+	this.likeSearch = $resource('http://www.tastekid.com/api/similar?k=76627-TasteMe-RG4042W1',{limit:40,callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
 
 
 	this.getLikeList = function(){

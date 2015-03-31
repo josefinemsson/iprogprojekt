@@ -40,13 +40,17 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
    		var heartList = Model.getHeartList();
    		var allData = data.Similar;
    		var ourData = allData.Results;
-   		for(var i = 0; i<ourData.length; i++){
-   			for(var j=0; j<heartList.length; j++){
-   				if(ourData[i].Name === heartList[j]){
-   					ourData.splice(i,1);
-   				}
-   			}
-   		}
+   		$scope.dataLikeList = allData.Info;
+
+   		for(var i = ourData.length - 1; i>=0; i--){
+  			for( var j=0; j<heartList.length; j++){
+    			if(ourData[i].Name === heartList[j]){
+      				ourData.splice(i, 1);
+      				break
+    			}
+  			}
+		}
+
    		$scope.getRecList = ourData;
    		console.log(data);
    		$scope.status = "";

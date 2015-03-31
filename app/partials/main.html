@@ -2,30 +2,29 @@
 
 	<div class="row">
 		<div class="col-md-3" id="field">
-			<ul>
-				<li ng-repeat="like in getLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like); createNewRecList()" id = 'removeMe' aria-hidden="true"></span>{{like}}</li>
-			</ul>
-			<div class="row">
-				<form>
-					<input type="text" ng-model="currentLike" placeholder="What do you like?">
-					<button type= "button" ng-click="addToLikeList(currentLike); createNewRecList()" value="ADD">ADD</botton>
-				</form>
+
+				<p ng-repeat="like in dataLikeList"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like); createNewRecList()" id = 'removeMe' aria-hidden="true"></span>{{like.Name.substr(0,20)}}<img src="/images/{{like.Type}}.png" id="icon"></p>
+			<div class="row" id="search">
+				<div class="input-group" id="searchbar">
+      				<input type="text" ng-model="currentLike" class="form-control" placeholder="Add things you like!">
+      				<span class="input-group-btn">
+        				<button class="btn btn-default" ng-click="addToLikeList(currentLike); createNewRecList()" type="button">ADD</button>
+      				</span>
+    			</div>
 			</div>
 		</div>
 
 		<div class="col-md-3" id="field">
 			{{status}}
-			<ul>
-				<li ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing.Name); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span>{{thing.Name}}</li>
-			</ul>
+			
+				<p ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing.Name); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span>{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></p>
+			
 		</div>
 
 		<div class="col-md-3" id="field">
-			<ul>
-				<li ng-repeat="heart in getHeartList"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span>{{heart}}
+			<p ng-repeat="heart in getHeartList"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span>{{heart}}
 
-				</li>
-			</ul>
+			</p>
 		</div>
 	</div>
 

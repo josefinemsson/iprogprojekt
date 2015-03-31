@@ -11,7 +11,6 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 			string += likeList[i]+',';
 		}
 		string = string.substring(0,string.length-1);
-		console.log(string)
 		return string;
 	}
 
@@ -25,13 +24,14 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 
 	this.addToLikeList = function(likedItem){	
 	 	likeList.push(likedItem)
-	 	console.log(likeList);
+
 	}
 
 
 	this.removeFromLikeList = function (name){
+		console.log('hohoho')
 	 	for (i=0;i<likeList.length;i++){
-	 		if (likeList[i]===name){
+	 		if (likeList[i].toLowerCase()===name.toLowerCase()){
 	 			likeList.splice(i,1);
 	 		}
 	 	}

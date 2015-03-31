@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-3" id="field">
 
-				<p ng-repeat="like in dataLikeList"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like); createNewRecList()" id = 'removeMe' aria-hidden="true"></span>{{like.Name.substr(0,20)}}<img src="/images/{{like.Type}}.png" id="icon"></p>
+				<p ng-repeat="like in dataLikeList"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span>{{like.Name.substr(0,20)}}<img src="/images/{{like.Type}}.png" id="icon"></p>
 			<div class="row" id="search">
 				<div class="input-group" id="searchbar">
       				<input type="text" ng-model="currentLike" class="form-control" placeholder="Add things you like!">
@@ -17,12 +17,12 @@
 		<div class="col-md-3" id="field">
 			{{status}}
 			
-				<p ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing.Name); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span>{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></p>
+				<p ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span>{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></p>
 			
 		</div>
 
 		<div class="col-md-3" id="field">
-			<p ng-repeat="heart in getHeartList"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span>{{heart}}
+			<p ng-repeat="heart in getHeartList"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span>{{heart.Name}}<img src="/images/{{heart.Type}}.png" id="icon">
 
 			</p>
 		</div>

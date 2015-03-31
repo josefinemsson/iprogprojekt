@@ -7,7 +7,6 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 	}
 
 	$scope.addToLikeList = function (item){
-		console.log('Lägger till i likelist')
 		Model.addToLikeList(item);
 	}
 
@@ -20,31 +19,27 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		$scope.getHeartList = Model.getHeartList();
 	}
 
-	
-	
 
 	$scope.addToHeartList = function(item){
-		console.log('Add to heartList')
 		return Model.addToHeartList(item);
 	}
 
 	$scope.removeFromHeartList = function(item){
-		console.log('Tar bort från heart')
 		return Model.removeFromHeartList(item);
 	}
 
 	$scope.createNewRecList = function() {
-		console.log('JAG LADDAR OM')
 
    		Model.likeSearch.get({q:Model.getStringLikeList()},function(data){
    		var heartList = Model.getHeartList();
    		var allData = data.Similar;
    		var ourData = allData.Results;
    		$scope.dataLikeList = allData.Info;
+   		console.log($scope.dataLikeList)
 
    		for(var i = ourData.length - 1; i>=0; i--){
   			for( var j=0; j<heartList.length; j++){
-    			if(ourData[i].Name === heartList[j]){
+    			if(ourData[i].Name === heartList[j].Name){
       				ourData.splice(i, 1);
       				break
     			}

@@ -29,6 +29,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 	}
 
 	$scope.removeFromHeartList = function(item){
+		console.log('Tar bort från heart')
 		return Model.removeFromHeartList(item);
 	}
 

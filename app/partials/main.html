@@ -22,7 +22,7 @@
 
 		<div class="col-md-3" id="field">
 			<ul>
-				<li ng-repeat="heart in getHeartList"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true"></span>{{heart}}
+				<li ng-repeat="heart in getHeartList"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span>{{heart}}
 
 				</li>
 			</ul>

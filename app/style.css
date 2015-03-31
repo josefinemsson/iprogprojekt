@@ -32,6 +32,8 @@ font-size: 20px;
 
 #heartMe:hover, #unHeartMe {
 	color: red;
+	padding-right: 5px;
+
 
 	}
 

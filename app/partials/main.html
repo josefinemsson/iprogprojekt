@@ -16,7 +16,7 @@
 		<div class="col-md-3" id="field">
 			{{status}}
 			<ul>
-				<li ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing.Name); getOurHeartList()" id = 'heartMe' aria-hidden="true"></span>{{thing.Name}}</li>
+				<li ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing.Name); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span>{{thing.Name}}</li>
 			</ul>
 		</div>
 

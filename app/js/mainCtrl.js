@@ -33,11 +33,19 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 	}
 
 	$scope.createNewRecList = function() {
+		console.log('JAG LADDAR OM')
 
    		Model.likeSearch.get({q:Model.getStringLikeList()},function(data){
-
+   		var heartList = Model.getHeartList();
    		var allData = data.Similar;
    		var ourData = allData.Results;
+   		for(var i = 0; i<ourData.length; i++){
+   			for(var j=0; j<heartList.length; j++){
+   				if(ourData[i].Name === heartList[j]){
+   					ourData.splice(i,1);
+   				}
+   			}
+   		}
    		$scope.getRecList = ourData;
    		console.log(data);
    		$scope.status = "";

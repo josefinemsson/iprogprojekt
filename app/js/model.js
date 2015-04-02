@@ -3,6 +3,7 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	var likeList= [];
 	var recList = [];
 	var heartList = [];
+	/*var chosenItem= "";*/
 
 
 	this.getStringLikeList = function(){
@@ -58,6 +59,16 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	 	}
 
 	}
+
+	/*this.setSpecificLike = function (thingLiked){
+		chosenItem = thingLiked;
+
+	}
+
+	this.getSpecificLike = function (thingLiked){
+		return chosenItem;
+
+	}*/
 	
 	return this;
 });

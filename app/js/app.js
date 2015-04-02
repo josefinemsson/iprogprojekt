@@ -9,7 +9,7 @@ var tasteMeApp = angular.module('tasteMe', ['ngRoute','ngResource']);
         templateUrl: 'partials/main.html',
         controller: 'MainCtrl'
       }).
-      when('/info', {
+      when('/info/:infoName', {
         templateUrl: 'partials/info.html',
         controller: 'InfoCtrl'
       }).

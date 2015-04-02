@@ -2,6 +2,10 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 	$scope.status= "Add some things you like to the left and get recommendations!";
 
+	/*$scope.specificLike = function (item){
+		Model.setSpecificLike(item);
+	}*/
+
 	$scope.getLikeList = function (){
 		return Model.getLikeList();
 	}

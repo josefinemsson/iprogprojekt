@@ -6,6 +6,18 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		Model.setSpecificLike(item);
 	}*/
 
+	$scope.dataLikeList = function() {
+		return Model.getDataLikeList();
+	}
+
+	$scope.getRecList = function(){
+		return Model.getRecList();
+	}
+
+	$scope.getHeartList = function(){
+		return Model.getHeartList();
+	}
+
 	$scope.getLikeList = function (){
 		return Model.getLikeList();
 	}
@@ -16,11 +28,6 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 	$scope.removeFromLikeList = function (name){
 		return Model.removeFromLikeList(name);
-	}
-
-	$scope.getOurHeartList = function (){
-
-		$scope.getHeartList = Model.getHeartList();
 	}
 
 
@@ -38,8 +45,8 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
    		var heartList = Model.getHeartList();
    		var allData = data.Similar;
    		var ourData = allData.Results;
-   		$scope.dataLikeList = allData.Info;
-   		console.log($scope.dataLikeList)
+   		Model.changeDataLikeList(allData.Info);
+
 
    		for(var i = ourData.length - 1; i>=0; i--){
   			for( var j=0; j<heartList.length; j++){
@@ -50,7 +57,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
   			}
 		}
 
-   		$scope.getRecList = ourData;
+   		Model.changeRecList(ourData);
    		console.log(data);
    		$scope.status = "";
    },function(data){

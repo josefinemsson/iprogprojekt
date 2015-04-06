@@ -10,16 +10,52 @@ font-weight: lighter;
 color: #415667;
 }
 
+a{
+	color: #464646;
+}
+
+a:hover{
+	color: #052636;
+}
+
+
+h3{
+	font-family: "Helvetica neue", "Lucida Grande", sans-serif;
+	font-weight: 100;
+	font-size: 55px;
+	color: #fff;
+	text-shadow: 2px 2px #e0462c;
+
+}
+
+
+h4{
+	font-family: "Helvetica neue", "Lucida Grande", sans-serif;
+	font-weight: 100;
+	font-size: 35px;
+	color: #fff;
+	text-shadow: 2px 2px #e0462c;
+
+}
+
+#add{
+	color: #052636;
+}
 #header{
 	padding-top: 20px;
 	margin-left: 80px;
 	width: 500px;
 }
 
+#headfield{
+	margin-top: 5px;
+	margin-left: 50px;
+
+}
+
 #field{
-	display:block;
-	margin-top: 30px;
 	background-color: #fff;
+	display:block;
 	margin-left: 50px;
 	padding-top: 10px;
 	height: 462px;
@@ -54,7 +90,7 @@ font-size: 20px;
 }
 
 #heartMe:hover, #unHeartMe {
-	color: red;
+	color: #ff2636;
 	padding-right: 5px;
 
 
@@ -64,11 +100,27 @@ font-size: 20px;
 	color: black;
 }
 
-#info {
-	margin-top: 30px;
-	background-color: #fff;
+#wrapper{
 	margin-left: 100px;
+}
+
+#back{
+	margin-left: 0px;
+	margin-top: 6px;
+	font-size: 80px;
+	color: #e0462c;
+}
+
+#info {
+	background-color: #fff;
 	padding-top: 10px;
-	height: 462px;
+	padding-bottom: 10px;
+	height: 380px;
+	overflow-y:auto
+
 	
+}
+
+#infoText{
+	font-size: 12px;
 }

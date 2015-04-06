@@ -17,7 +17,7 @@
 		<div class="col-md-3" id="field">
 			{{status}}
 			
-				<p ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p>
+				<p ng-repeat="thing in getRecList"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p>
 			
 		</div>
 

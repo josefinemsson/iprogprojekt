@@ -34,7 +34,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 	$scope.createNewRecList = function() {
 
-   		Model.likeSearch.get({q:Model.getStringLikeList()},function(data){
+   		Model.likeSearch.get({q:Model.getStringLikeList(), limit: 40}, function(data){
    		var heartList = Model.getHeartList();
    		var allData = data.Similar;
    		var ourData = allData.Results;

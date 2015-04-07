@@ -12,13 +12,20 @@ $scope.infoChosenItem = function() {
    		console.log(data.Similar.Info[0])
 
    		$scope.object = data.Similar.Info[0];
-   		var videoURL = $scope.object.yID;
+   		var videoURL = 'http://youtube.com/embed/'+$scope.object.yID+'?rel=0&amp;showinfo=0';
+
+   		$('#vid').attr('src',videoURL);
+
    		$scope.info = $scope.object.Name;
-   		$scope.video = '<iframe width="490" height="276" src="https://www.youtube.com/embed/'+videoURL+'&showinfo=0" frameborder="0" allowfullscreen></iframe>'
 
 
   			}
 )}
 
 $scope.infoChosenItem()
+
+
+
+
+
 });

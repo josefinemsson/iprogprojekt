@@ -20,7 +20,7 @@
 	<div class="row">
 		<div class="col-md-3" id="field">
 
-				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span>{{like.Name.substr(0,20)}}<img src="/images/{{like.Type}}.png" id="icon"></p>
+				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}">{{like.Name.substr(0,20)}}</a><img src="/images/{{like.Type}}.png" id="icon"></p>
 			<div class="row" id="search">
 				<div class="input-group" id="searchbar">
       				<input type="text" ng-model="currentLike" class="form-control" placeholder="Add things you like!">
@@ -34,7 +34,15 @@
 		<div class="col-md-3" id="field">
 
 				<p ng-repeat="thing in getRecList()"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p>
-			
+				<div class="row" id="search">
+					<div class="btn-group btn-group-justified" id="filterB" role="group" aria-label="...">
+						<a class="btn btn-default" role="button" data-toggle="button" aria-pressed="false" autocomplete="off"><img src="/images/movie.png" width="20px"></a>
+						<a class="btn btn-default" role="button" data-toggle="button" aria-pressed="false" autocomplete="off"><img src="/images/show.png" width="20px"></a>
+						<a class="btn btn-default" role="button" data-toggle="button" aria-pressed="false" autocomplete="off"><img src="/images/music.png" width="20px"></a>
+						<a class="btn btn-default" role="button" data-toggle="button" aria-pressed="false" autocomplete="off"><img src="/images/game.png" width="20px"></a>
+						<a class="btn btn-default" role="button" data-toggle="button" aria-pressed="false" autocomplete="off"><img src="/images/book.png" width="20px"></a>
+					</div>
+				</div>
 		</div>
 
 		<div class="col-md-3" id="field">

@@ -69,6 +69,14 @@ h4{
 	width: 101%;
 }
 
+#b {
+	width: 20.05%;
+}
+
+#b:visited{
+	color: #fff;
+}
+
 
 #icon{
 	float: right;
@@ -78,6 +86,9 @@ h4{
 #filterB{
 	width: 100%;
 }
+
+
+
 
 p
 {

@@ -35,6 +35,25 @@
 
 				<p ng-repeat="thing in getRecList()"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p>
 				<div class="row" id="search">
+					<div class="btn-group-justified" data-toggle="buttons">
+	  					<label class="btn btn-default">
+	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/movie.png" width="20px">
+	  					</label>
+	  					<label class="btn btn-default">
+	   						<input type="radio" name="options" id="b" autocomplete="off"> <img src="/images/show.png" width="20px">
+	  					</label>
+	  					<label class="btn btn-default">
+	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/music.png" width="20px">
+	  					</label>
+	  					<label class="btn btn-default">
+	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/game.png" width="20px">
+	  					</label>
+	  					<label class="btn btn-default">
+	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/book.png" width="20px">
+	  					</label>
+					</div>
+				</div>
+				<!--<div class="row" id="search">
 					<div class="btn-group" role="group" data-toggle="buttons-checkbox" id= 'filterB' aria-label="...">
   						<a type="button" class="btn btn-default" id='b'><img src="/images/movie.png" width="20px"></a>
   						<a type="button" class="btn btn-default" id='b'><img src="/images/show.png" width="20px"></a>
@@ -42,7 +61,7 @@
   						<a type="button" class="btn btn-default" id='b'><img src="/images/game.png" width="20px"></a>
   						<a type="button" class="btn btn-default" id='b'><img src="/images/book.png" width="20px"></a>
 					</div>
-				</div>
+				</div>-->
 		</div>
 		<div class="col-md-3" id="field">
 			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}">{{heart.Name.substr(0,20)}}</a><img src="/images/{{heart.Type}}.png" id="icon">

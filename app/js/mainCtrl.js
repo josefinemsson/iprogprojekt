@@ -1,6 +1,8 @@
 tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 	$scope.status= "Add some things you like to the left and get recommendations!";
+	$('#pop').popover({ trigger: "hover" })
+
 
 	/*$scope.specificLike = function (item){
 		Model.setSpecificLike(item);
@@ -30,7 +32,6 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		return Model.removeFromLikeList(name);
 	}
 
-
 	$scope.addToHeartList = function(item){
 		return Model.addToHeartList(item);
 	}
@@ -45,6 +46,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
    		var heartList = Model.getHeartList();
    		var allData = data.Similar;
    		var ourData = allData.Results;
+   		
    		Model.changeDataLikeList(allData.Info);
 
 
@@ -58,7 +60,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		}
 
    		Model.changeRecList(ourData);
-   		console.log(data);
+   		console.log(allData.Info);
    		$scope.status = "";
    },function(data){
      $scope.status = "There was an error";

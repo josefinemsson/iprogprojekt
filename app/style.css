@@ -66,7 +66,8 @@ h4{
 #search{
 	position: absolute; 
 	bottom: 0;
-	width: 101%;
+	width: 100%;
+	
 }
 
 #b {
@@ -75,6 +76,11 @@ h4{
 
 #b:visited{
 	color: #fff;
+}
+
+.input-group-addon{
+	height: 30px;
+ 
 }
 
 
@@ -86,9 +92,14 @@ h4{
 #filterB{
 	width: 100%;
 }
+#pop {
+	background-color: #fff;
 
+}
 
-
+#serachbar{
+	display: inline-block;
+}
 
 p
 {

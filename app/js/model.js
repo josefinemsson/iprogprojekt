@@ -4,7 +4,6 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	var recList = [];
 	var heartList = [];
 	var dataLikeList = [];
-	/*var chosenItem= "";*/
 
 
 	this.getStringLikeList = function(){
@@ -32,16 +31,22 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	}
 
 
-	this.addToLikeList = function(likedItem){	
-	 	likeList.push(likedItem)
+	this.addToLikeList = function(likedItem){
+		if(likedItem.length!=0){
+	 	likeList.push(likedItem)}
 
 	}
 
 
 	this.removeFromLikeList = function (name){
 	 	for (i=0;i<likeList.length;i++){
-	 		if (likeList[i].toLowerCase()===name.toLowerCase()){
+	 		console.log(name)
+	 		console.log(likeList[i])
+	 		if (likeList[i].toLowerCase().substring(likeList[i].indexOf(":") + 1)===name.toLowerCase()){
 	 			likeList.splice(i,1);
+	 		}
+	 		else{ if (likeList[i].toLowerCase()===name.toLowerCase()){
+	 			likeList.splice(i,1);}
 	 		}
 	 	}
 	}

@@ -19,21 +19,25 @@
 
 	<div class="row">
 		<div class="col-md-3" id="field">
+				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}/{{like.Type}}">{{like.Name.substr(0,20)}}</a><img src="/images/{{like.Type}}.png" id="icon"></p>
 
-				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}">{{like.Name.substr(0,20)}}</a><img src="/images/{{like.Type}}.png" id="icon"></p>
 			<div class="row" id="search">
 				<div class="input-group" id="searchbar">
-      				<input type="text" ng-model="currentLike" class="form-control" placeholder="Add things you like!">
+					<input type="text" ng-model="currentLike" class="form-control" placeholder="Add things you like!">
+					
       				<span class="input-group-btn">
         				<button class="btn btn-default" id="add" ng-click="addToLikeList(currentLike); createNewRecList()" type="button">ADD</button>
       				</span>
+      				<span id= "pop" class="input-group-addon glyphicon glyphicon-comment" data-toggle="popover" data-placement="top" data-content='Before your search word you can write "Movie:", "Music:", "Game:", "Book" or "Show:" to specify your search, make sure there is no space between the ":" and the search word' data-container="body">
+      				</span>
     			</div>
+    			
 			</div>
 		</div>
 
 		<div class="col-md-3" id="field">
 
-				<p ng-repeat="thing in getRecList()"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p>
+				<p ng-repeat="thing in getRecList()"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}/{{thing.Type}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p>
 				<div class="row" id="search">
 					<div class="btn-group-justified" data-toggle="buttons">
 	  					<label class="btn btn-default">

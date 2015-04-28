@@ -19,9 +19,33 @@
 
 	<div class="row">
 		<div class="col-md-3" id="field">
+
+
+
 				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}/{{like.Type}}">{{like.Name.substr(0,20)}}</a><img src="/images/{{like.Type}}.png" id="icon"></p>
 
-			<div class="row" id="search">
+		</div>
+
+		<div class="col-md-3" id="field">
+
+    <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="filter">
+            <span ng-repeat="thing in getRecList()"><p id="{{thing.Type}}"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}/{{thing.Type}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p></span>
+        </div>
+    </div>
+
+
+		</div>
+		<div class="col-md-3" id="field">
+			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}">{{heart.Name.substr(0,20)}}</a><img src="/images/{{heart.Type}}.png" id="icon">
+
+			</p>
+		</div>
+	</div>
+
+	<div class="row">
+<div class="col-md-3" id="sub-field">
+
 				<div class="input-group" id="searchbar">
 					<input type="text" ng-model="currentLike" class="form-control" placeholder="Add things you like!">
 					
@@ -30,48 +54,25 @@
       				</span>
       				<span id= "pop" class="input-group-addon glyphicon glyphicon-comment" data-toggle="popover" data-placement="top" data-content='Before your search word you can write "Movie:", "Music:", "Game:", "Book" or "Show:" to specify your search, make sure there is no space between the ":" and the search word' data-container="body">
       				</span>
-    			</div>
+    			
     			
 			</div>
-		</div>
+</div>
 
-		<div class="col-md-3" id="field">
+<div class="col-md-3" id="sub-field">
+	<div class="row" id="search">
+<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+        <li id="filter"><a href="#filter" id="filterAll" data-toggle="tab" ng-click="createNewRecList()">All</a></li>
+        <li id="filter"><a href="#filter" id="filterMovies" ng-click="createNewRecList('movies')" data-toggle="tab"><img src="/images/movie.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterShow" ng-click="createNewRecList('shows')" data-toggle="tab"><img src="/images/show.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterMusic" ng-click="createNewRecList('music')" data-toggle="tab"><img src="/images/music.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterGames" ng-click="createNewRecList('games')" data-toggle="tab"><img src="/images/game.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterBook" ng-click="createNewRecList('books')" data-toggle="tab"><img src="/images/book.png" width="100%"></a></li>
+    </ul>
 
-				<p ng-repeat="thing in getRecList()"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}/{{thing.Type}}">{{thing.Name.substr(0,20)}} <img src="/images/{{thing.Type}}.png" id="icon"></a></p>
-				<div class="row" id="search">
-					<div class="btn-group-justified" data-toggle="buttons">
-	  					<label class="btn btn-default">
-	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/movie.png" width="20px">
-	  					</label>
-	  					<label class="btn btn-default">
-	   						<input type="radio" name="options" id="b" autocomplete="off"> <img src="/images/show.png" width="20px">
-	  					</label>
-	  					<label class="btn btn-default">
-	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/music.png" width="20px">
-	  					</label>
-	  					<label class="btn btn-default">
-	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/game.png" width="20px">
-	  					</label>
-	  					<label class="btn btn-default">
-	    					<input type="radio" name="options" id="b" autocomplete="off"><img src="/images/book.png" width="20px">
-	  					</label>
-					</div>
-				</div>
-				<!--<div class="row" id="search">
-					<div class="btn-group" role="group" data-toggle="buttons-checkbox" id= 'filterB' aria-label="...">
-  						<a type="button" class="btn btn-default" id='b'><img src="/images/movie.png" width="20px"></a>
-  						<a type="button" class="btn btn-default" id='b'><img src="/images/show.png" width="20px"></a>
-  						<a type="button" class="btn btn-default" id='b'><img src="/images/music.png" width="20px"></a>
-  						<a type="button" class="btn btn-default" id='b'><img src="/images/game.png" width="20px"></a>
-  						<a type="button" class="btn btn-default" id='b'><img src="/images/book.png" width="20px"></a>
-					</div>
-				</div>-->
-		</div>
-		<div class="col-md-3" id="field">
-			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}">{{heart.Name.substr(0,20)}}</a><img src="/images/{{heart.Type}}.png" id="icon">
-
-			</p>
-		</div>
+</div>
+</div>
+<div class="col-md-3" id="sub-field"></div>
 	</div>
 
 </div>

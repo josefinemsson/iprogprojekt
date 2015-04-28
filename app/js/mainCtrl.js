@@ -40,9 +40,10 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		return Model.removeFromHeartList(item);
 	}
 
-	$scope.createNewRecList = function() {
+	$scope.createNewRecList = function(filter) {
+		console.log(filter)
 
-   		Model.likeSearch.get({q:Model.getStringLikeList(), limit: 40}, function(data){
+   		Model.likeSearch.get({q:Model.getStringLikeList(), type:filter, limit: 40}, function(data){
    		var heartList = Model.getHeartList();
    		var allData = data.Similar;
    		var ourData = allData.Results;
@@ -66,5 +67,14 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
      $scope.status = "There was an error";
    });
  }
+
+ $scope.filterRecList = function(filter){
+ 	Model.filterRecList(filter);
+ 	
+ }
 	
+
+	jQuery(document).ready(function ($) {
+        $('#tabs').tab();
+    });
 });

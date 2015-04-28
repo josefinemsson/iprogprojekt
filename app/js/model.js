@@ -59,6 +59,15 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 		recList = data;
 	}
 
+	this.filterRecList = function (filter){
+		alert('model filter')
+		for(var i = recList.length-1; i>=0; i--){
+			if(recList[i].Type != filter){
+				recList.splice(i,1);
+			}
+		}
+	}
+
 	this.getHeartList = function(){
 		console.log('Get heartList')
 		return heartList;

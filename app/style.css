@@ -50,16 +50,29 @@ h4{
 
 }
 
-#field{
+#field {
 	background-color: #fff;
 	display:block;
 	margin-left: 50px;
 	padding-top: 10px;
-	height: 462px;
+	height: 432px;
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-radius: 5px 5px 0px 0px;
+
+}
+
+#sub-field{
+	background-color: #fff;
+	display:block;
+	margin-left: 50px;
+	padding-top: 0px;
+	height: 40px;
 	position: relative;
 	overflow-y: hidden;
 	overflow-x: hidden;
-	border-radius: 5px;
+	border-radius: 0px 0px 5px 5px;
 
 }
 
@@ -86,7 +99,7 @@ h4{
 
 #icon{
 	float: right;
-	width: 25px;
+	width: 18px;
 }
 
 #filterB{
@@ -155,4 +168,19 @@ font-size: 18px;
 
 #vid{
 	margin-top: 30px;
+}
+
+li#filter{
+	width:16.66%;
+	padding: 0px;
+	margin: 0px;
+}
+
+li#a{
+	padding: 0px;
+	margin: 0px;
+}
+
+#search {
+	background-color: #f1f1f1;
 }

@@ -38,7 +38,7 @@
 
 		</div>
 		<div class="col-md-3" id="field">
-			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}">{{heart.Name.substr(0,20)}}</a><img src="/images/{{heart.Type}}.png" id="icon">
+			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}/{{heart.Type}}">{{heart.Name.substr(0,20)}}</a><img src="/images/{{heart.Type}}.png" id="icon">
 
 			</p>
 

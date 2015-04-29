@@ -152,17 +152,36 @@ font-size: 18px;
 	margin-left: 120px;
 }
 
-#back{
+#back, #share{
 	margin-left: 0px;
 	margin-top: 6px;
-	font-size: 80px;
-	color: #e0462c;
+	margin-bottom: 16px;
+	font-size: 60px;
+	color: #ededed;
+}
+
+#share-icon{
+	color: #bdbdbd;
+	margin-right: 4px;
+}
+
+#share-icon:hover{
+	color: #939393;
+}
+
+#share{
+	float: right;
+	margin-right: 20px;
+}
+
+#back:hover, #share:hover {
+	color: #e4e4e4;
 }
 
 #info {
 	padding-top: 10px;
 	padding-bottom: 10px;
-	height: 380px;
+	height: 316px;
 	overflow-y:auto;
 }
 

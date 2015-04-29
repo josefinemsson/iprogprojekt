@@ -22,6 +22,8 @@ $scope.infoChosenItem = function() {
 
    		$scope.info = $scope.object.Name;
 
+   		$scope.wikipedia = $scope.object.wUrl;
+
 
   			}
 )}

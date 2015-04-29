@@ -69,8 +69,10 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	}
 
 	this.getHeartList = function(){
-		console.log('Get heartList')
+				console.log(heartList)
+
 		return heartList;
+
 	}
 
 	this.addToHeartList = function(name){

@@ -31,9 +31,9 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	}
 
 
-	this.addToLikeList = function(likedItem){
+	this.addToLikeList = function(likedItem,type){
 		if(likedItem.length!=0){
-	 	likeList.push(likedItem)}
+	 	likeList.push(type+likedItem)}
 
 	}
 

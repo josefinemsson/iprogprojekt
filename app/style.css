@@ -18,6 +18,10 @@ a:hover{
 	color: #052636;
 }
 
+body > div > div.dropup.open {
+position: absolute;
+}
+
 
 h3{
 	font-family: "Lato", "Lucida Grande", sans-serif;
@@ -63,6 +67,8 @@ h4{
 
 }
 
+#dropdown { z-index: 999; }
+
 #sub-field{
 	background-color: #fff;
 	display:block;
@@ -70,8 +76,6 @@ h4{
 	padding-top: 0px;
 	height: 40px;
 	position: relative;
-	overflow-y: hidden;
-	overflow-x: hidden;
 	border-radius: 0px 0px 5px 5px;
 
 }

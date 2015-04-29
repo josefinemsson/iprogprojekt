@@ -23,6 +23,7 @@
 
 
 				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}/{{like.Type}}">{{like.Name.substr(0,20)}}</a><img src="/images/{{like.Type}}.png" id="icon"></p>
+	
 
 		</div>
 
@@ -40,24 +41,43 @@
 			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}">{{heart.Name.substr(0,20)}}</a><img src="/images/{{heart.Type}}.png" id="icon">
 
 			</p>
+
 		</div>
 	</div>
+		
+	
+
 
 	<div class="row">
-<div class="col-md-3" id="sub-field">
+		<div class="col-md-3" id="sub-field">
 
 				<div class="input-group" id="searchbar">
 					<input type="text" ng-model="currentLike" class="form-control" placeholder="Add things you like!">
 					
       				<span class="input-group-btn">
-        				<button class="btn btn-default" id="add" ng-click="addToLikeList(currentLike); createNewRecList()" type="button">ADD</button>
+
+      					<div class="btn-group dropup">
+						  <button type="button" class="btn btn-default dropdown-toggle" data-container="body" data-toggle="dropdown" aria-expanded="false">
+						    Type <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu" id="dropdown">
+						    <li><a type="button" class="btn btn-default"  ng-click="setType('movie:');enableAdd()">Movie</a></li>
+						    <li><a type="button" class="btn btn-default"  ng-click="setType('show:');enableAdd()">Show</a></li>
+						    <li><a type="button" class="btn btn-default"  ng-click="setType('book:');enableAdd()">Book</a></li>
+						    <li><a type="button" class="btn btn-default"  ng-click="setType('game:');enableAdd()">Game</a></li>
+						    <li><a type="button" class="btn btn-default"  ng-click="setType('music:');enableAdd()">Music</a></li>
+						  </ul>
+						</div>
+
+        				<button class="btn btn-default" id="add" ng-click="addToLikeList(currentLike); createNewRecList()" type="button" disabled=true>ADD</button>
+        				
       				</span>
-      				<span id= "pop" class="input-group-addon glyphicon glyphicon-comment" data-toggle="popover" data-placement="top" data-content='Before your search word you can write "Movie:", "Music:", "Game:", "Book" or "Show:" to specify your search, make sure there is no space between the ":" and the search word' data-container="body">
-      				</span>
-    			
-    			
-			</div>
-</div>
+      				
+	
+				</div>
+		</div>
+
+
 
 <div class="col-md-3" id="sub-field">
 	<div class="row" id="search">

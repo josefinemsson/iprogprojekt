@@ -1,7 +1,9 @@
 tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 	$scope.status= "Add some things you like to the left and get recommendations!";
-	$('#pop').popover({ trigger: "hover" })
+	$('#pop').popover({ trigger: "click" })
+	
+	var types="";
 
 
 	/*$scope.specificLike = function (item){
@@ -10,6 +12,17 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 
 	$scope.dataLikeList = function() {
 		return Model.getDataLikeList();
+	}
+
+	$scope.enableAdd = function() {
+		console.log("enable")
+		document.getElementById("add").disabled=false;
+	}
+
+
+	$scope.setType = function(type) {
+		console.log("set type")
+		types=type;
 	}
 
 	$scope.getRecList = function(){
@@ -25,7 +38,8 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 	}
 
 	$scope.addToLikeList = function (item){
-		Model.addToLikeList(item);
+		console.log(types)
+		Model.addToLikeList(item,types);
 	}
 
 	$scope.removeFromLikeList = function (name){

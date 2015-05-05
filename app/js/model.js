@@ -1,10 +1,28 @@
-tasteMeApp.factory('Model',function ($resource,$http) {
+tasteMeApp.factory('Model',function ($resource,$http,$cookieStore) {
 
-	var likeList= [];
+	if($cookieStore.get('likeList')){
+		var likeList=$cookieStore.get('likeList')
+	}
+	else {
+		var likeList = [];
+	}
+	
 	var recList = [];
-	var heartList = [];
-	var dataLikeList = [];
 
+	if($cookieStore.get('heartList')){
+		var heartList=$cookieStore.get('heartList')
+	}
+	else {
+		var heartList = [];
+	}
+	
+
+	if($cookieStore.get('dataLikeList')){
+		var dataLikeList=$cookieStore.get('dataLikeList')
+	}
+	else {
+		var dataLikeList = [];
+	}
 
 	this.getStringLikeList = function(){
 		var string = ''
@@ -17,6 +35,10 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 
 	this.changeDataLikeList = function(data){
 		dataLikeList = data
+		for(var i=0;i<likeList.length;i++){
+			likeList[i]=dataLikeList[i].Name}
+		
+		$cookieStore.put('dataLikeList',dataLikeList);
 	}
 
 	this.getDataLikeList = function(){
@@ -26,29 +48,28 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 
 	this.likeSearch = $resource('http://www.tastekid.com/api/similar?k=76627-TasteMe-RG4042W1',{callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
 	
-	this.getLikeList = function(){
-		return likeList;
-	}
-
-
+	
 	this.addToLikeList = function(likedItem,type){
 		if(likedItem.length!=0){
 	 	likeList.push(type+likedItem)}
+	 	$cookieStore.put('likeList',likeList)
+	 	
+
 
 	}
 
 
 	this.removeFromLikeList = function (name){
 	 	for (i=0;i<likeList.length;i++){
-	 		console.log(name)
-	 		console.log(likeList[i])
-	 		if (likeList[i].toLowerCase().substring(likeList[i].indexOf(":") + 1)===name.toLowerCase()){
+	 	
+	 		if (likeList[i].toLowerCase()===name.Type+':'+name.Name.toLowerCase()){
 	 			likeList.splice(i,1);
 	 		}
-	 		else{ if (likeList[i].toLowerCase()===name.toLowerCase()){
+	 		else {if (likeList[i].toLowerCase()===name.Name.toLowerCase()){
 	 			likeList.splice(i,1);}
 	 		}
 	 	}
+	 	$cookieStore.put('likeList',likeList)
 	}
 
 	this.getRecList = function (){
@@ -69,14 +90,13 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	}
 
 	this.getHeartList = function(){
-				console.log(heartList)
-
 		return heartList;
 
 	}
 
 	this.addToHeartList = function(name){
 		heartList.push(name);
+		$cookieStore.put('heartList',heartList)
 	}
 
 	this.removeFromHeartList = function (name){
@@ -85,18 +105,9 @@ tasteMeApp.factory('Model',function ($resource,$http) {
 	 			heartList.splice(i,1);
 	 		}
 	 	}
-
+	 	$cookieStore.put('heartList',heartList)
 	}
 
-	/*this.setSpecificLike = function (thingLiked){
-		chosenItem = thingLiked;
-
-	}
-
-	this.getSpecificLike = function (thingLiked){
-		return chosenItem;
-
-	}*/
 	
 	return this;
 });

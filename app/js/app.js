@@ -1,6 +1,5 @@
 
-var tasteMeApp = angular.module('tasteMe', ['ngRoute','ngResource']);
-
+var tasteMeApp = angular.module('tasteMe', ['ngRoute','ngResource', 'ngCookies']);
 
  tasteMeApp.config(['$routeProvider',
   function($routeProvider) {

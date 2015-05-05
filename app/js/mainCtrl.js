@@ -1,27 +1,20 @@
-tasteMeApp.controller('MainCtrl', function ($scope,Model) {
+tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 
 	$scope.status= "Add some things you like to the left and get recommendations!";
 	$('#pop').popover({ trigger: "click" })
 	
 	var types="";
 
-
-	/*$scope.specificLike = function (item){
-		Model.setSpecificLike(item);
-	}*/
-
 	$scope.dataLikeList = function() {
 		return Model.getDataLikeList();
 	}
 
 	$scope.enableAdd = function() {
-		console.log("enable")
 		document.getElementById("add").disabled=false;
 	}
 
 
 	$scope.setType = function(type) {
-		console.log("set type")
 		types=type;
 	}
 
@@ -33,12 +26,8 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		return Model.getHeartList();
 	}
 
-	$scope.getLikeList = function (){
-		return Model.getLikeList();
-	}
-
+	
 	$scope.addToLikeList = function (item){
-		console.log(types)
 		Model.addToLikeList(item,types);
 	}
 
@@ -55,7 +44,6 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 	}
 
 	$scope.createNewRecList = function(filter) {
-		console.log(filter)
 
    		Model.likeSearch.get({q:Model.getStringLikeList(), type:filter, limit: 40}, function(data){
    		var heartList = Model.getHeartList();
@@ -75,7 +63,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 		}
 
    		Model.changeRecList(ourData);
-   		console.log(allData.Info);
+   		
    		$scope.status = "";
    },function(data){
      $scope.status = "There was an error";
@@ -91,4 +79,5 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model) {
 	jQuery(document).ready(function ($) {
         $('#tabs').tab();
     });
+$scope.createNewRecList()
 });

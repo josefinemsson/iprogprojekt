@@ -22,7 +22,7 @@
 
 
 
-				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like.Name); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}/{{like.Type}}">{{like.Name.substr(0,20)}}</a><img src="/images/{{like.Type}}.png" id="icon"></p>
+				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}/{{like.Type}}">{{like.Name.substr(0,20)}}</a><img src="/images/{{like.Type}}.png" id="icon"></p>
 	
 
 		</div>

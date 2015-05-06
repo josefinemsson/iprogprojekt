@@ -36,7 +36,7 @@ tasteMeApp.factory('Model',function ($resource,$http,$cookieStore) {
 	this.changeDataLikeList = function(data){
 		dataLikeList = data
 		for(var i=0;i<likeList.length;i++){
-			likeList[i]=dataLikeList[i].Name}
+			likeList[i]=dataLikeList[i].Type + ':' + dataLikeList[i].Name}
 		
 		$cookieStore.put('dataLikeList',dataLikeList);
 	}
@@ -46,7 +46,7 @@ tasteMeApp.factory('Model',function ($resource,$http,$cookieStore) {
 	}
 
 
-	this.likeSearch = $resource('http://www.tastekid.com/api/similar?k=76627-TasteMe-RG4042W1',{callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
+	this.likeSearch = $resource('http://www.tastekid.com/api/similar?k=76627-TasteMe-YLKMHX14',{callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
 	
 	
 	this.addToLikeList = function(likedItem,type){

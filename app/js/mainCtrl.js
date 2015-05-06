@@ -44,6 +44,8 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 	}
 
 	$scope.createNewRecList = function(filter) {
+		console.log('Jag tar fram en ny lista')
+		console.log(filter)
 
    		Model.likeSearch.get({q:Model.getStringLikeList(), type:filter, limit: 40}, function(data){
    		var heartList = Model.getHeartList();
@@ -64,20 +66,16 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 
    		Model.changeRecList(ourData);
    		
-   		$scope.status = "";
+
    },function(data){
-     $scope.status = "There was an error";
+     alert('There was an error getting your results, please try refreshing the page');
    });
  }
 
- $scope.filterRecList = function(filter){
- 	Model.filterRecList(filter);
- 	
- }
 	
 
 	jQuery(document).ready(function ($) {
         $('#tabs').tab();
     });
-$scope.createNewRecList()
+
 });

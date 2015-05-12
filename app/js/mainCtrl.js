@@ -1,9 +1,10 @@
 tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 
-	$scope.status= "Add some things you like to the left and get recommendations!";
+
 	$('#pop').popover({ trigger: "click" })
 	
 	var types="";
+	var filter ="";
 
 	$scope.dataLikeList = function() {
 		return Model.getDataLikeList();
@@ -43,7 +44,12 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 		return Model.removeFromHeartList(item);
 	}
 
-	$scope.createNewRecList = function(filter) {
+	$scope.changeFilter = function(newFilter){
+		filter = newFilter;
+		$scope.createNewRecList();
+	}
+
+	$scope.createNewRecList = function() {
 		console.log('Jag tar fram en ny lista')
 		console.log(filter)
 
@@ -72,10 +78,8 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
    });
  }
 
-	
 
 	jQuery(document).ready(function ($) {
         $('#tabs').tab();
     });
-
 });

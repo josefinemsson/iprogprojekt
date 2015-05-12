@@ -12,7 +12,7 @@
 
 
 		<div class="col-md-3" id="headfield">
-			<center><h4>Saved things</h4></center>
+			<center><h4>Saved things <span class="glyphicon glyphicon-heart" aria-hidden="true" style="font-size:25px"></h4></center>
 		</div>
 
 	</div>
@@ -22,7 +22,7 @@
 
 
 
-				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}/{{like.Type}}">{{like.Name.substr(0,20)}}</a><img ng-src="/images/{{like.Type}}.png" id="icon"></p>
+				<p ng-repeat="like in dataLikeList()"><span class="glyphicon glyphicon-remove" ng-click="removeFromLikeList(like); createNewRecList()" id = 'removeMe' aria-hidden="true"></span><a href="/#/info/{{like.Name.split(' ').join('+')}}/{{like.Type}}">{{like.Name.substr(0,24)}}</a><img ng-src="/images/{{like.Type}}.png" id="icon"></p>
 	
 
 		</div>
@@ -31,14 +31,14 @@
 
     <div id="my-tab-content" class="tab-content">
         <div class="tab-pane active" id="filter">
-            <span ng-repeat="thing in getRecList()"><p id="{{thing.Type}}"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}/{{thing.Type}}">{{thing.Name.substr(0,20)}} <img ng-src="/images/{{thing.Type}}.png" id="icon"></a></p></span>
+            <span ng-repeat="thing in getRecList()"><p id="{{thing.Type}}"><span class="glyphicon glyphicon-heart" ng-click= "addToHeartList(thing); getOurHeartList();createNewRecList()" id = 'heartMe' aria-hidden="true"></span><a href="/#/info/{{thing.Name.split(' ').join('+')}}/{{thing.Type}}">{{thing.Name.substr(0,24)}} <img ng-src="/images/{{thing.Type}}.png" id="icon"></a></p></span>
         </div>
     </div>
 
 
 		</div>
 		<div class="col-md-3" id="field">
-			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}/{{heart.Type}}">{{heart.Name.substr(0,20)}}</a><img ng-src="/images/{{heart.Type}}.png" id="icon">
+			<p ng-repeat="heart in getHeartList()"><span class="glyphicon glyphicon-heart" id = 'unHeartMe' aria-hidden="true" ng-click="removeFromHeartList(heart);createNewRecList()"></span><a href="/#/info/{{heart.Name.split(' ').join('+')}}/{{heart.Type}}">{{heart.Name.substr(0,24)}}</a><img ng-src="/images/{{heart.Type}}.png" id="icon">
 
 			</p>
 
@@ -82,12 +82,12 @@
 <div class="col-md-3" id="sub-field">
 	<div class="row" id="search">
 <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li id="filter"><a href="#filter" id="filterAll" data-toggle="tab" ng-click="createNewRecList()">All</a></li>
-        <li id="filter"><a href="#filter" id="filterMovies" ng-click="createNewRecList('movies')" data-toggle="tab"><img src="/images/movie.png" width="100%"></a></li>
-        <li id="filter"><a href="#filter" id="filterShow" ng-click="createNewRecList('shows')" data-toggle="tab"><img src="/images/show.png" width="100%"></a></li>
-        <li id="filter"><a href="#filter" id="filterMusic" ng-click="createNewRecList('music')" data-toggle="tab"><img src="/images/music.png" width="100%"></a></li>
-        <li id="filter"><a href="#filter" id="filterGames" ng-click="createNewRecList('games')" data-toggle="tab"><img src="/images/game.png" width="100%"></a></li>
-        <li id="filter"><a href="#filter" id="filterBook" ng-click="createNewRecList('books')" data-toggle="tab"><img src="/images/book.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterAll" data-toggle="tab" ng-click="changeFilter('')">All</a></li>
+        <li id="filter"><a href="#filter" id="filterMovies" ng-click="changeFilter('movies')" data-toggle="tab"><img src="/images/movie.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterShow" ng-click="changeFilter('shows')" data-toggle="tab"><img src="/images/show.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterMusic" ng-click="changeFilter('music')" data-toggle="tab"><img src="/images/music.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterGames" ng-click="changeFilter('games')" data-toggle="tab"><img src="/images/game.png" width="100%"></a></li>
+        <li id="filter"><a href="#filter" id="filterBook" ng-click="changeFilter('books')" data-toggle="tab"><img src="/images/book.png" width="100%"></a></li>
     </ul>
 
 </div>

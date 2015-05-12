@@ -16,7 +16,7 @@ $scope.infoChosenItem = function() {
    		console.log(data.Similar.Info[0])
 
    		$scope.object = data.Similar.Info[0];
-   		var videoURL = 'http://youtube.com/embed/'+$scope.object.yID+'?rel=0&amp;showinfo=0';
+   		var videoURL = 'http://www.youtube.com/embed/'+$scope.object.yID+'?rel=0&amp;showinfo=0';
 
    		$('#vid').attr('src',videoURL);
 

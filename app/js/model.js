@@ -36,9 +36,15 @@ tasteMeApp.factory('Model',function ($resource,$http,$cookieStore) {
 	this.changeDataLikeList = function(data){
 		dataLikeList = data
 		for(var i=0;i<likeList.length;i++){
+			if(dataLikeList[i].Type != 'unknown'){
 			likeList[i]=dataLikeList[i].Type + ':' + dataLikeList[i].Name}
-		
+
+			else{
+				likeList[i]= dataLikeList[i].Name
+			}
+		}
 		$cookieStore.put('dataLikeList',dataLikeList);
+		$cookieStore.put('likeList',likeList);
 	}
 
 	this.getDataLikeList = function(){

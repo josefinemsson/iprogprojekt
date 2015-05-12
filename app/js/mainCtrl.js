@@ -1,6 +1,7 @@
 tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 
 
+
 	$('#pop').popover({ trigger: "click" })
 	
 	var types="";
@@ -50,7 +51,6 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 	}
 
 	$scope.createNewRecList = function() {
-		console.log('Jag tar fram en ny lista')
 		console.log(filter)
 
    		Model.likeSearch.get({q:Model.getStringLikeList(), type:filter, limit: 40}, function(data){
@@ -82,4 +82,7 @@ tasteMeApp.controller('MainCtrl', function ($scope,Model,$cookieStore) {
 	jQuery(document).ready(function ($) {
         $('#tabs').tab();
     });
+
+
+    $scope.createNewRecList();
 });

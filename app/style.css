@@ -207,3 +207,14 @@ li#a{
 #search {
 	background-color: #f1f1f1;
 }
+
+#filterimg{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#filtertext{
+	padding-left: 10px;
+	padding-top: 10px;
+	font-size: 14px;
+}
